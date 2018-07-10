@@ -7,7 +7,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Game game = new Game();
-        game.play();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a name: ");
+        Player player = new Player(scanner.nextLine(), scanner);
+
+        while(true){
+            Game game = new Game(player);
+            game.play();
+        }
     }
 }
